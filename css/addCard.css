@@ -11,6 +11,9 @@ body {
 
 }
 
+* {
+  box-sizing: border-box;
+}
 
 .container {
   text-align: center;
@@ -230,4 +233,9 @@ body {
     flex-direction: column;
     gap: 12px;
   }
+
+  body {
+    padding: 0 10px;
+  }
+
 }
