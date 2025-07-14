@@ -195,11 +195,17 @@ body {
 @media (max-width: 580px) {
 
   .container,
-  .containers,
-  .box {
+  .containers {
+    display: none;
     width: 88%;
     padding: 15px;
     box-shadow: 0 0 0 15px rgba(118, 115, 115, 0.344);
+  }
+
+  .box {
+    width: 88%;
+    padding: 15px;
+
   }
 
   .questions,
