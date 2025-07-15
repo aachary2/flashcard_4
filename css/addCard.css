@@ -338,3 +338,15 @@ button:active,
   transform: scale(1);
   background-color: rgba(0, 0, 0, 0.2);
 }
+
+.speak {
+  float: left;
+  color: blue;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.speak:hover {
+  color: darkblue;
+  transform: scale(1.4);
+}

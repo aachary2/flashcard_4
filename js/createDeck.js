@@ -95,6 +95,7 @@ function createCards() {
 
 
     flashcard.innerHTML = `
+    <span class="material-symbols-outlined">text_to_speech</span>
       <span class="material-icons" idx="${cardData.id}">delete</span>
       <div class="card-front"><h3>${cardData.question}</h3></div>
       <div class="hidden-div" style="display:none;"><h3>${cardData.answer}</h3></div>
@@ -103,11 +104,25 @@ function createCards() {
     const trash_ = flashcard.querySelector('.material-icons');
     trash_.classList.add('trash-icon');
     trash_.title = "remove from deck";
+    const speak = flashcard.querySelector('.material-symbols-outlined');
+    speak.classList.add('speak');
+    speak.title = "Speak text"
 
     containers.appendChild(flashcard);
     cards.push(flashcard);
     flashcard.style.display = "none";
+    const speakBtn = flashcard.querySelector('.speak');
+    const cardFront = flashcard.querySelector('.card-front');
+    const speakAnswer = flashcard.querySelector('.hidden-div');
 
+    speakBtn.addEventListener('click', () => {
+      let content = cardFront.textContent.trim();
+
+      if (speakAnswer.style.display !== "none") {
+        content += ". " + speakAnswer.textContent.trim();
+      }
+      window.speechSynthesis.speak(new SpeechSynthesisUtterance(content));
+    });
   }
 
   currIndex = 0;
