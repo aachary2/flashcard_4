@@ -93,16 +93,21 @@ function createCards() {
     const flashcard = document.createElement("div");
     flashcard.classList.add("flashcard");
 
+
     flashcard.innerHTML = `
       <span class="material-icons" idx="${cardData.id}">delete</span>
       <div class="card-front"><h3>${cardData.question}</h3></div>
       <div class="hidden-div" style="display:none;"><h3>${cardData.answer}</h3></div>
       <div class="card-number">Card ${showCounter} of ${data.length}</div>
     `;
+    const trash_ = flashcard.querySelector('.material-icons');
+    trash_.classList.add('trash-icon');
+    trash_.title = "remove from deck";
 
     containers.appendChild(flashcard);
     cards.push(flashcard);
     flashcard.style.display = "none";
+
   }
 
   currIndex = 0;
@@ -113,9 +118,39 @@ function createCards() {
     cards[currIndex].style.display = "block";
     the_answer.style.display = "none";
     buttons.onclick = () => {
-      the_answer.style.display = (the_answer.style.display === "none") ? "block" : "none";
+      if ((the_answer.style.display === "none")) {
+        the_answer.style.display = "block"
+      } else {
+        the_answer.style.display = "none"
+      }
     };
   }
+  if (cards.length === 1) {
+    previousButton.disabled = true;
+    nextButton.disabled = true;
+    firstQuestion.disabled = true;
+    lastQuestion.disabled = true;
+  } else {
+    if (currIndex === cards.length - 1) {
+      nextButton.disabled = true;
+      lastQuestion.disabled = true;
+    } else {
+      nextButton.disabled = false;
+      lastQuestion.disabled = false;
+    }
+
+    if (currIndex === 0) {
+      previousButton.disabled = true;
+      firstQuestion.disabled = true;
+    } else {
+      previousButton.disabled = false;
+      firstQuestion.disabled = false;
+    }
+
+
+
+  }
+
 
   const remove_btns = document.querySelectorAll(".material-icons");
   for (let i = 0; i < remove_btns.length; i++) {
@@ -144,10 +179,40 @@ function previous() {
       cards[currIndex].style.display = "block";
       the_answer.style.display = "none";
       buttons.onclick = () => {
-        the_answer.style.display = (the_answer.style.display === "none") ? "block" : "none";
+        if ((the_answer.style.display === "none")) {
+          the_answer.style.display = "block"
+        } else {
+          the_answer.style.display = "none"
+        }
       };
     }
   }
+  if (cards.length === 1) {
+    previousButton.disabled = true;
+    nextButton.disabled = true;
+    firstQuestion.disabled = true;
+    lastQuestion.disabled = true;
+  } else {
+    if (currIndex === cards.length - 1) {
+      nextButton.disabled = true;
+      lastQuestion.disabled = true;
+    } else {
+      nextButton.disabled = false;
+      lastQuestion.disabled = false;
+    }
+
+    if (currIndex === 0) {
+      previousButton.disabled = true;
+      firstQuestion.disabled = true;
+    } else {
+      previousButton.disabled = false;
+      firstQuestion.disabled = false;
+    }
+
+
+
+  }
+
 }
 previousButton.addEventListener('click', previous);
 
@@ -160,10 +225,40 @@ function viewNextCard() {
       cards[currIndex].style.display = "block";
       the_answer.style.display = "none";
       buttons.onclick = () => {
-        the_answer.style.display = (the_answer.style.display === "none") ? "block" : "none";
+        if ((the_answer.style.display === "none")) {
+          the_answer.style.display = "block"
+        } else {
+          the_answer.style.display = "none"
+        }
       };
     }
   }
+  if (cards.length === 1) {
+    previousButton.disabled = true;
+    nextButton.disabled = true;
+    firstQuestion.disabled = true;
+    lastQuestion.disabled = true;
+  } else {
+    if (currIndex === cards.length - 1) {
+      nextButton.disabled = true;
+      lastQuestion.disabled = true;
+    } else {
+      nextButton.disabled = false;
+      lastQuestion.disabled = false;
+    }
+
+    if (currIndex === 0) {
+      previousButton.disabled = true;
+      firstQuestion.disabled = true;
+    } else {
+      previousButton.disabled = false;
+      firstQuestion.disabled = false;
+    }
+
+
+
+  }
+
 }
 nextButton.addEventListener("click", viewNextCard);
 
@@ -186,9 +281,39 @@ lastQuestion.addEventListener('click', function () {
     cards[currIndex].style.display = "block";
     the_answer.style.display = "none";
     buttons.onclick = () => {
-      the_answer.style.display = (the_answer.style.display === "none") ? "block" : "none";
+      if ((the_answer.style.display === "none")) {
+        the_answer.style.display = "block"
+      } else {
+        the_answer.style.display = "none"
+      }
     };
   }
+  if (cards.length === 1) {
+    previousButton.disabled = true;
+    nextButton.disabled = true;
+    firstQuestion.disabled = true;
+    lastQuestion.disabled = true;
+  } else {
+    if (currIndex === cards.length - 1) {
+      nextButton.disabled = true;
+      lastQuestion.disabled = true;
+    } else {
+      nextButton.disabled = false;
+      lastQuestion.disabled = false;
+    }
+
+    if (currIndex === 0) {
+      previousButton.disabled = true;
+      firstQuestion.disabled = true;
+    } else {
+      previousButton.disabled = false;
+      firstQuestion.disabled = false;
+    }
+
+
+
+  }
+
 });
 
 firstQuestion.addEventListener('click', function () {
@@ -200,7 +325,37 @@ firstQuestion.addEventListener('click', function () {
     cards[currIndex].style.display = "block";
     the_answer.style.display = "none";
     buttons.onclick = () => {
-      the_answer.style.display = (the_answer.style.display === "none") ? "block" : "none";
+      if ((the_answer.style.display === "none")) {
+        the_answer.style.display = "block"
+      } else {
+        the_answer.style.display = "none"
+      }
     };
   }
+  if (cards.length === 1) {
+    previousButton.disabled = true;
+    nextButton.disabled = true;
+    firstQuestion.disabled = true;
+    lastQuestion.disabled = true;
+  } else {
+    if (currIndex === cards.length - 1) {
+      nextButton.disabled = true;
+      lastQuestion.disabled = true;
+    } else {
+      nextButton.disabled = false;
+      lastQuestion.disabled = false;
+    }
+
+    if (currIndex === 0) {
+      previousButton.disabled = true;
+      firstQuestion.disabled = true;
+    } else {
+      previousButton.disabled = false;
+      firstQuestion.disabled = false;
+    }
+
+
+
+  }
+
 });

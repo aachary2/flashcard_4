@@ -320,3 +320,21 @@ body {
 .breadcrumbs ul li a:hover {
   color: #28a745;
 }
+
+.trash-icon {
+  color: red;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.trash-icon:hover {
+  color: darkred;
+  transform: scale(1.4);
+}
+
+button:active,
+.material-icons:active,
+.trash-icon:active {
+  transform: scale(1);
+  background-color: rgba(0, 0, 0, 0.2);
+}
