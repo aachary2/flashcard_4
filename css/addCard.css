@@ -7,7 +7,8 @@ body {
   background-color: beige;
   height: 100vh;
   width: 100vw;
-
+  margin: 0;
+  padding: 0;
 
 }
 
@@ -255,4 +256,42 @@ body {
 
 
   }
+}
+
+.breadcrumbs {
+  padding: 10px 0px;
+  box-shadow: 0 4px 30px -8 rgba(0, 0, 0, 0.3);
+  width: fit-content;
+  margin-left: 0;
+  position: relative;
+
+
+}
+
+.breadcrumbs ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  margin-left: 0;
+  padding-left: 0;
+  gap: 7px;
+}
+
+.breadcrumbs ul li a {
+  text-decoration: none;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.material-icons {
+  vertical-align: middle;
+  font-size: 22px;
+}
+
+
+.breadcrumbs ul li a:hover {
+  color: #28a745;
 }
