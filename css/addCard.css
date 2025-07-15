@@ -211,57 +211,70 @@ body {
 
 }
 
-
-
 .nav-buttons {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 9px;
-  width: 100%;
+  justify-content: center;
+  gap: 8px;
   max-width: 780px;
   margin: auto;
+  width: 100%;
+
 }
 
 .nav-buttons button {
-  flex: 1 1 auto;
-  min-width: 0;
   padding: 12px;
   font-size: 1rem;
-  border-radius: 10px;
+  border-radius: 9px;
   color: white;
+  flex-grow: 1;
+  min-width: 100px;
+
+}
+
+
+@media (max-width: 576px) {
+  #prev {
+    order: 1;
+    flex: 1 1 46%;
+  }
+
+  #next {
+    order: 2;
+    flex: 1 1 46%;
+  }
+
+  #check {
+    order: 3;
+    flex: 1 1 100%;
+  }
+
+  #first {
+    order: 4;
+    flex: 1 1 46%;
+  }
+
+  #last {
+    order: 5;
+    flex: 1 1 46%;
+  }
 }
 
 @media (min-width: 577px) {
-  .nav-buttons {
-    justify-content: space-between;
 
-  }
-
-  #check,
   #prev,
+  #check,
   #next {
-    flex: 1 1 28%;
-    min-width: 100px;
-
-  }
-
-  .nav-buttons button {
-    flex: 1 1 100%;
+    order: initial;
+    flex: 1 1 29%;
   }
 
   #first,
   #last {
-    flex: 1 1 41%;
-    min-width: 118px;
+    flex: 1 1 46%;
+    max-width: 46%;
   }
 
-  .smaller-device {
-    flex: auto;
-    display: contents;
-
-
-  }
 
   .breadcrumbs {
     padding: 10px 12px;
