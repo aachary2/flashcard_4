@@ -29,8 +29,30 @@ function getQuestion(index) {
 
   q.innerHTML = `<h3>${data[currIndex][0]}</h3>`;
   ans.innerHTML = `<h3>${data[currIndex][1]}</h3>`
-  cardNumber.textContent = `Card Number: ${currIndex + 1}`;
-  document.getElementById("deck-total").textContent = `Total Cards: ${data.length}`
+  cardNumber.textContent = `Card: ${currIndex + 1} of ${data.length} `;
+  if (data.length === 1) {
+    previousButton.disabled = true;
+    nextButton.disabled = true;
+    firstQuestion.disabled = true;
+    lastQuestion.disabled = true;
+  } else {
+    if (currIndex === data.length - 1) {
+      nextButton.disabled = true;
+      lastQuestion.disabled = true;
+    } else {
+      nextButton.disabled = false;
+      lastQuestion.disabled = false;
+    }
+
+    if (currIndex === 0) {
+      previousButton.disabled = true;
+      firstQuestion.disabled = true;
+    } else {
+      previousButton.disabled = false;
+      firstQuestion.disabled = false;
+    }
+  }
+
 
 
 
