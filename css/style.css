@@ -123,3 +123,113 @@ button:hover {
 
 
 }
+
+.button {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    max-width: 580px;
+    margin: 32px auto 0 auto;
+    width: 100%;
+
+}
+
+.button button {
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 9px;
+    color: white;
+    flex-grow: 1;
+    min-width: 100px;
+
+}
+
+
+@media (max-width: 576px) {
+    #prev {
+        order: 1;
+        flex: 1 1 46%;
+    }
+
+    #next {
+        order: 2;
+        flex: 1 1 46%;
+    }
+
+    #check {
+        order: 3;
+        flex: 1 1 100%;
+    }
+
+    #first {
+        order: 4;
+        flex: 1 1 46%;
+    }
+
+    #last {
+        order: 5;
+        flex: 1 1 46%;
+    }
+}
+
+@media (min-width: 577px) {
+
+    #prev,
+    #check,
+    #next {
+        order: initial;
+        flex: 1 1 29%;
+    }
+
+    #first,
+    #last {
+        flex: 1 1 46%;
+        max-width: 46%;
+    }
+
+
+    .breadcrumbs {
+        padding: 10px 12px;
+    }
+}
+
+.breadcrumbs {
+
+    padding: 10px 0;
+    margin-left: 12px;
+    box-shadow: none;
+    width: auto;
+    background: transparent;
+    margin: 0;
+
+}
+
+.breadcrumbs ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    gap: 7px;
+}
+
+.breadcrumbs ul li a {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+    padding: 0;
+}
+
+.material-icons {
+    vertical-align: middle;
+    font-size: 22px;
+}
+
+
+.breadcrumbs ul li a:hover {
+    color: #28a745;
+}
