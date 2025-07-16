@@ -232,6 +232,14 @@ body {
 
 }
 
+.nav-buttons button:hover,
+.nav-buttons button:focus {
+  background-color: #5951ef !important;
+  transform: translateY(-4px);
+  transition: all 0.3s ease-in-out;
+}
+
+
 
 @media (max-width: 576px) {
   #prev {
