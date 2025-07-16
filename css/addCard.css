@@ -287,6 +287,13 @@ body {
   .breadcrumbs {
     padding: 10px 12px;
   }
+
+  .nav-buttons button:active,
+  .nav-buttons button:focus {
+    background-color: #5951ef !important;
+    transform: translateY(-4px);
+    transition: all 0.3s ease-in-out;
+  }
 }
 
 .breadcrumbs {
