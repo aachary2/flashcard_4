@@ -93,7 +93,6 @@ function createCards() {
     const flashcard = document.createElement("div");
     flashcard.classList.add("flashcard");
 
-
     flashcard.innerHTML = `
     <span class="material-symbols-outlined">text_to_speech</span>
       <span class="material-icons" idx="${cardData.id}">delete</span>
@@ -117,7 +116,6 @@ function createCards() {
 
     speakBtn.addEventListener('click', () => {
       let content = cardFront.textContent.trim();
-
       if (speakAnswer.style.display !== "none") {
         content += ". " + speakAnswer.textContent.trim();
       }
@@ -161,11 +159,7 @@ function createCards() {
       previousButton.disabled = false;
       firstQuestion.disabled = false;
     }
-
-
-
   }
-
 
   const remove_btns = document.querySelectorAll(".material-icons");
   for (let i = 0; i < remove_btns.length; i++) {
@@ -175,9 +169,15 @@ function createCards() {
 
       if (indexToRemove !== -1) {
         const deletedCard = data[indexToRemove];
+
+        // 🔥 ADDED CONFIRMATION PROMPT HERE:
+        const confirmed = window.confirm(`Are you sure you want to delete:\n"${deletedCard.question}" → "${deletedCard.answer}"?`);
+        if (!confirmed) {
+          return; // user changed their mind
+        }
+
         data.splice(indexToRemove, 1);
         sessionStorage.setItem("card", JSON.stringify(data));
-
         createCards();
         setConfirmationMessage(`Card deleted: “${deletedCard.question}” → “${deletedCard.answer}”`);
       }
@@ -223,11 +223,7 @@ function previous() {
       previousButton.disabled = false;
       firstQuestion.disabled = false;
     }
-
-
-
   }
-
 }
 previousButton.addEventListener('click', previous);
 
@@ -269,11 +265,7 @@ function viewNextCard() {
       previousButton.disabled = false;
       firstQuestion.disabled = false;
     }
-
-
-
   }
-
 }
 nextButton.addEventListener("click", viewNextCard);
 
@@ -324,11 +316,7 @@ lastQuestion.addEventListener('click', function () {
       previousButton.disabled = false;
       firstQuestion.disabled = false;
     }
-
-
-
   }
-
 });
 
 firstQuestion.addEventListener('click', function () {
@@ -368,9 +356,5 @@ firstQuestion.addEventListener('click', function () {
       previousButton.disabled = false;
       firstQuestion.disabled = false;
     }
-
-
-
   }
-
 });
