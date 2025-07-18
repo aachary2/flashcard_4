@@ -86,4 +86,17 @@ firstQuestion.addEventListener('click', function () {
 previousButton.addEventListener('click', previousCards);
 getQuestion(currIndex);
 
+const speakBtn = document.querySelector('.material-symbols-outlined');
+
+
+
+speakBtn.addEventListener('click', () => {
+  let content = q.textContent.trim();
+
+  if (ans.style.display !== "none") {
+    content += ". " + ans.textContent.trim();
+  }
+  window.speechSynthesis.speak(new SpeechSynthesisUtterance(content));
+});
+
 
