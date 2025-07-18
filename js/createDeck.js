@@ -169,13 +169,10 @@ function createCards() {
 
       if (indexToRemove !== -1) {
         const deletedCard = data[indexToRemove];
-
-        // 🔥 ADDED CONFIRMATION PROMPT HERE:
         const confirmed = window.confirm(`Are you sure you want to delete:\n"${deletedCard.question}" → "${deletedCard.answer}"?`);
         if (!confirmed) {
-          return; // user changed their mind
+          return;
         }
-
         data.splice(indexToRemove, 1);
         sessionStorage.setItem("card", JSON.stringify(data));
         createCards();
